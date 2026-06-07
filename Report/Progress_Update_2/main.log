@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.7)  8 JUN 2026 03:33
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.7)  8 JUN 2026 03:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1576,46 +1576,52 @@ File: images/Explode_ISO.png Graphic file (type bmp)
 <images/Explode_ISO.png>
 File: images/Explode_side.png Graphic file (type bmp)
 <images/Explode_side.png>
- [49] [50] [51] [52] [53]
+ [49] [50] [51] [52] [53] [54]
+Overfull \hbox (26.04066pt too wide) in paragraph at lines 220--231
+ [][] 
+ []
 
-LaTeX Warning: Reference `fig:engineering_drawing' on page 54 undefined on inpu
-t line 173.
 
-[54] [55]
-Underfull \hbox (badness 3679) in paragraph at lines 304--309
+Underfull \hbox (badness 5563) in paragraph at lines 236--237
+[] []\TU/THSarabunNew(1)/b/n/12 3.2.3.2 สรุปสาเหตุร่วมของระบบและแนวทางแก้ไขภาพร
+วม (Systemic Issues & Corrective
+ []
+
+[55] [56]
+Underfull \hbox (badness 3679) in paragraph at lines 332--337
 []\TU/THSarabunNew(1)/m/n/12 Encoder อ่าน ค่า ตำแหน่ง และ ความเร็ว,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--323
+Underfull \hbox (badness 10000) in paragraph at lines 347--351
 \TU/THSarabunNew(1)/m/n/12 State Machine (IDLE/ RECEPTION/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--330
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 []\TU/THSarabunNew(1)/m/n/12 Peripheral Initialization, Callback
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--330
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 \TU/THSarabunNew(1)/m/n/12 Registration, Main Loop (Modbus
  []
 
-[56]
-Overfull \hbox (358.71417pt too wide) in paragraph at lines 343--367
+[57]
+Overfull \hbox (358.71417pt too wide) in paragraph at lines 371--395
  [][] 
  []
 
-[57] [58]) (sections/04_integration.tex
-Overfull \hbox (6.74048pt too wide) in paragraph at lines 455--2
+[58] [59]) (sections/04_integration.tex
+Overfull \hbox (6.74048pt too wide) in paragraph at lines 483--2
 \TU/THSarabunNew(2)/m/n/12 control_system_mode \TU/THSarabunNew(1)/m/n/12 ระหว่
 าง \TU/THSarabunNew(2)/m/n/12 CONTROL_MODE_JOYSTICK \TU/THSarabunNew(1)/m/n/12 
 และ \TU/THSarabunNew(2)/m/n/12 CONTROL_MODE_BASE_SYSTEM
  []
 
-[59]
+[60]
 
-LaTeX Warning: Reference `fig:encoder_pwm_test' on page 60 undefined on input l
+LaTeX Warning: Reference `fig:encoder_pwm_test' on page 61 undefined on input l
 ine 50.
 
 
@@ -1640,7 +1646,7 @@ Underfull \hbox (badness 5403) in paragraph at lines 166--167
 abunNew(1)/m/n/12 10, signed
  []
 
-[60]
+[61]
 Underfull \hbox (badness 10000) in paragraph at lines 191--193
 []\TU/THSarabunNew(1)/m/n/12 อ่าน ค่า มุม ได้ ถูก ต้อง
  []
@@ -1662,38 +1668,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--218
 ew(1)/m/n/12 0.5s,
  []
 
-) (sections/05_test_results.tex [61] [62] [63]
+) (sections/05_test_results.tex [62] [63] [64]
 File: images/chirp_raw_filtered.png Graphic file (type bmp)
 <images/chirp_raw_filtered.png>
 File: images/cross_validation.png Graphic file (type bmp)
 <images/cross_validation.png>
- [64]
+ [65]
 File: images/cross_val_bar.png Graphic file (type bmp)
 <images/cross_val_bar.png>
- [65]
+ [66]
 File: images/sim_result.png Graphic file (type bmp)
 <images/sim_result.png>
- [66]
+ [67]
 File: images/sim_current.png Graphic file (type bmp)
 <images/sim_current.png>
- [67]
+ [68]
 File: images/pareto_front.png Graphic file (type bmp)
 <images/pareto_front.png>
- [68]
+ [69]
 File: images/rod_best_compromise.png Graphic file (type bmp)
 <images/rod_best_compromise.png>
 
-[69] [70]
+[70] [71]
 
-LaTeX Warning: Reference `fig:encoder_serial_log' on page 71 undefined on input
+LaTeX Warning: Reference `fig:encoder_serial_log' on page 72 undefined on input
  line 384.
 
-[71]
+[72]
 Overfull \hbox (5.55829pt too wide) in paragraph at lines 464--476
  [][] 
  []
 
-) (sections/06_verification.tex [72]
+) (sections/06_verification.tex [73]
 Underfull \hbox (badness 7796) in paragraph at lines 42--42
 []|\TU/THSarabunNew(1)/m/n/12 ใช้ Brushed DC Motor +
  []
@@ -1729,57 +1735,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--72
  []
 
 sections/06_verification.tex:75: ignored error: Infinite glue shrinkage found i
-n box being split [73] [74]) (sections/07_conclusion.tex [75] [76])
-(sections/08_appendix.tex [77]
+n box being split [74] [75]) (sections/07_conclusion.tex [76] [77])
+(sections/08_appendix.tex [78]
 File: images/Full_CAD.png Graphic file (type bmp)
 <images/Full_CAD.png>
 File: images/assem_explode.png Graphic file (type bmp)
 <images/assem_explode.png>
- [78]
+ [79]
 File: images/Base_subassem.png Graphic file (type bmp)
 <images/Base_subassem.png>
 File: images/Base_explode.png Graphic file (type bmp)
 <images/Base_explode.png>
- [79] [80]
+ [80] [81]
 File: images/Arm_subassem.png Graphic file (type bmp)
 <images/Arm_subassem.png>
 File: images/Arm_explode.png Graphic file (type bmp)
 <images/Arm_explode.png>
- [81]
+ [82]
 File: images/encoder_subassem.png Graphic file (type bmp)
 <images/encoder_subassem.png>
- [82]
+ [83]
 File: images/encoder_explode.png Graphic file (type bmp)
 <images/encoder_explode.png>
- [83]
+ [84]
 Overfull \vbox (6.38774pt too high) has occurred while \output is active []
 
 
-[84]
+[85]
 File: images/full_assem.png Graphic file (type bmp)
 <images/full_assem.png>
 File: images/full_explode.png Graphic file (type bmp)
 <images/full_explode.png>
 File: images/Drawing_PlateV.png Graphic file (type bmp)
 <images/Drawing_PlateV.png>
- [85]
+ [86]
 File: images/Drawing_Body.png Graphic file (type bmp)
 <images/Drawing_Body.png>
- [86]
+ [87]
 File: images/Drawing_Arm.png Graphic file (type bmp)
 <images/Drawing_Arm.png>
- [87]
+ [88]
 File: images/Drawing_Bearingmounting.png Graphic file (type bmp)
 <images/Drawing_Bearingmounting.png>
- [88]
+ [89]
 File: images/Drawing_MoutingEncoder.png Graphic file (type bmp)
 <images/Drawing_MoutingEncoder.png>
- [89]
+ [90]
 File: images/Drawing_Rod40.png Graphic file (type bmp)
 <images/Drawing_Rod40.png>
 File: images/Drawing_Lowerplate.png Graphic file (type bmp)
 <images/Drawing_Lowerplate.png>
- [90]
+ [91]
 File: images/Drawing_Topplate.png Graphic file (type bmp)
 <images/Drawing_Topplate.png>
 
@@ -1787,19 +1793,19 @@ File: images/Drawing_Topplate.png Graphic file (type bmp)
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 166.
 
-[91]
+[92]
 Underfull \hbox (badness 5064) in paragraph at lines 221--222
 []\TU/THSarabunNew(1)/m/n/12 ครอบคลุม แขน กล, End
  []
 
-[92]
+[93]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 271.
 LaTeX Font Info:    Font shape `TU/THSarabunNew(2)/m/it' will be
 (Font)              scaled to size 10.80005pt on input line 272.
 LaTeX Font Info:    Font shape `TU/THSarabunNew(2)/m/it' will be
 (Font)              scaled to size 14.04008pt on input line 272.
-) [93] (main.bbl
+) [94] (main.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
@@ -1807,7 +1813,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 Package natbib Warning: There were undefined citations.
 
-[94] (main.aux)
+[95] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1820,15 +1826,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DD4B5596393BDCEA58B4F124574A0CD7;31608.
+(rerunfilecheck)             Checksum: 7FE4680398F78379AD8A818818C8670D;31931.
  ) 
 Here is how much of TeX's memory you used:
- 33292 strings out of 402987
- 685298 string characters out of 5448525
+ 33295 strings out of 402987
+ 685443 string characters out of 5448525
  1401878 words of memory out of 5000000
- 61403 multiletter control sequences out of 15000+600000
+ 61406 multiletter control sequences out of 15000+600000
  658580 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,18n,107p,1280b,1161s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (103 pages).
+Output written on main.pdf (104 pages).

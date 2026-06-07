@@ -26,29 +26,29 @@
 \contentsline {table}{\numberline {26}{\ignorespaces \xpg@aux {}{thai}\ignorespaces รายการชิ้นส่วนสำหรับประกอบส่วนฐาน (Base Sub-assembly)}}{51}{table.caption.83}%
 \contentsline {table}{\numberline {27}{\ignorespaces \xpg@aux {}{thai}\ignorespaces รายการชิ้นส่วนสำหรับประกอบส่วนแขนกลและข้อต่อ}}{52}{table.caption.85}%
 \contentsline {table}{\numberline {28}{\ignorespaces \xpg@aux {}{thai}\ignorespaces รายการชิ้นส่วนสำหรับประกอบชุดเอ็นโค้ดเดอร์}}{53}{table.caption.87}%
-\contentsline {table}{\numberline {29}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการตรวจสอบขนาดชิ้นส่วนจริง}}{55}{table.caption.88}%
-\contentsline {table}{\numberline {30}{\ignorespaces \xpg@aux {}{thai}\ignorespaces Bill of Materials (BOM) ของตู้ควบคุม}}{56}{table.caption.89}%
-\contentsline {table}{\numberline {31}{\ignorespaces \xpg@aux {}{thai}\ignorespaces โมดูลหลักใน STM32 Firmware}}{57}{table.caption.90}%
-\contentsline {table}{\numberline {32}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ISR และ Task Timing ของ Firmware}}{57}{table.caption.91}%
-\contentsline {table}{\numberline {33}{\ignorespaces \xpg@aux {}{thai}\ignorespaces การ Map Command Character กับคำสั่งระบบ (\texttt {Motor\_ProcessCommand})}}{59}{table.caption.92}%
-\contentsline {table}{\numberline {34}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ Joystick แต่ละโหมด}}{60}{table.caption.93}%
-\contentsline {table}{\numberline {35}{\ignorespaces \xpg@aux {}{thai}\ignorespaces Modbus Register Map (Slave Address 21)}}{61}{table.caption.95}%
-\contentsline {table}{\numberline {36}{\ignorespaces \xpg@aux {}{thai}\ignorespaces แผนการทดสอบ End-to-End}}{62}{table.caption.96}%
-\contentsline {table}{\numberline {37}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล FEA เทียบกับเกณฑ์ M3}}{62}{table.caption.97}%
-\contentsline {table}{\numberline {38}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการคำนวณ Motion Profile เทียบกับ Requirement P1--P4}}{63}{table.caption.98}%
-\contentsline {table}{\numberline {39}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการวัด $R_a$ และ $L_a$ จาก Locked Rotor Test ที่ 12\,V}}{63}{table.caption.100}%
-\contentsline {table}{\numberline {40}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุปพารามิเตอร์ทั้งหมดจากการทำ System Identification}}{64}{table.caption.102}%
-\contentsline {table}{\numberline {41}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการ Cross-Validation ของ Model กับข้อมูลประเภทต่าง ๆ}}{66}{table.caption.106}%
-\contentsline {table}{\numberline {42}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล Simulation เทียบกับ Requirement (S-Curve 360°)}}{68}{table.caption.109}%
-\contentsline {table}{\numberline {43}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุป Solution บน Pareto Front ที่น่าสนใจ}}{69}{table.caption.111}%
-\contentsline {table}{\numberline {44}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ค่าพารามิเตอร์ที่ Optimal จาก NSGA-II (Best Compromise)}}{69}{table.caption.112}%
-\contentsline {table}{\numberline {45}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบความถูกต้องของ Encoder}}{71}{table.caption.116}%
-\contentsline {table}{\numberline {46}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ PWM และการตอบสนองของมอเตอร์}}{71}{table.caption.118}%
-\contentsline {table}{\numberline {47}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการวัดแรงดันที่จุดจ่ายไฟหลัก}}{72}{table.caption.120}%
-\contentsline {table}{\numberline {48}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ E-Stop Hardware Interlock}}{72}{table.caption.122}%
-\contentsline {table}{\numberline {49}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ Pilot Lamp แต่ละสถานะ}}{72}{table.caption.124}%
-\contentsline {table}{\numberline {50}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล Unit Test Joystick แต่ละโหมด}}{72}{table.caption.125}%
-\contentsline {table}{\numberline {51}{\ignorespaces ตาราง V\&V รวม ทั้ง 32 Requirements}}{73}{table.51}%
-\contentsline {table}{\numberline {52}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุปสถานะ V\&V แยกตาม Category}}{75}{table.caption.126}%
-\contentsline {table}{\numberline {53}{\ignorespaces \xpg@aux {}{thai}\ignorespaces กำหนดการงานสำคัญก่อน Final Demo}}{78}{table.caption.138}%
-\contentsline {table}{\numberline {54}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ตารางสรุปผลการคำนวณการขับเคลื่อนและ Safety Factor}}{93}{table.caption.157}%
+\contentsline {table}{\numberline {29}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ตารางสรุปภาพรวมชิ้นงานที่พบปัญหา}}{55}{table.caption.89}%
+\contentsline {table}{\numberline {30}{\ignorespaces \xpg@aux {}{thai}\ignorespaces Bill of Materials (BOM) ของตู้ควบคุม}}{57}{table.caption.91}%
+\contentsline {table}{\numberline {31}{\ignorespaces \xpg@aux {}{thai}\ignorespaces โมดูลหลักใน STM32 Firmware}}{58}{table.caption.92}%
+\contentsline {table}{\numberline {32}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ISR และ Task Timing ของ Firmware}}{58}{table.caption.93}%
+\contentsline {table}{\numberline {33}{\ignorespaces \xpg@aux {}{thai}\ignorespaces การ Map Command Character กับคำสั่งระบบ (\texttt {Motor\_ProcessCommand})}}{60}{table.caption.94}%
+\contentsline {table}{\numberline {34}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ Joystick แต่ละโหมด}}{61}{table.caption.95}%
+\contentsline {table}{\numberline {35}{\ignorespaces \xpg@aux {}{thai}\ignorespaces Modbus Register Map (Slave Address 21)}}{62}{table.caption.97}%
+\contentsline {table}{\numberline {36}{\ignorespaces \xpg@aux {}{thai}\ignorespaces แผนการทดสอบ End-to-End}}{63}{table.caption.98}%
+\contentsline {table}{\numberline {37}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล FEA เทียบกับเกณฑ์ M3}}{63}{table.caption.99}%
+\contentsline {table}{\numberline {38}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการคำนวณ Motion Profile เทียบกับ Requirement P1--P4}}{64}{table.caption.100}%
+\contentsline {table}{\numberline {39}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการวัด $R_a$ และ $L_a$ จาก Locked Rotor Test ที่ 12\,V}}{64}{table.caption.102}%
+\contentsline {table}{\numberline {40}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุปพารามิเตอร์ทั้งหมดจากการทำ System Identification}}{65}{table.caption.104}%
+\contentsline {table}{\numberline {41}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการ Cross-Validation ของ Model กับข้อมูลประเภทต่าง ๆ}}{67}{table.caption.108}%
+\contentsline {table}{\numberline {42}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล Simulation เทียบกับ Requirement (S-Curve 360°)}}{69}{table.caption.111}%
+\contentsline {table}{\numberline {43}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุป Solution บน Pareto Front ที่น่าสนใจ}}{70}{table.caption.113}%
+\contentsline {table}{\numberline {44}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ค่าพารามิเตอร์ที่ Optimal จาก NSGA-II (Best Compromise)}}{70}{table.caption.114}%
+\contentsline {table}{\numberline {45}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบความถูกต้องของ Encoder}}{72}{table.caption.118}%
+\contentsline {table}{\numberline {46}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ PWM และการตอบสนองของมอเตอร์}}{72}{table.caption.120}%
+\contentsline {table}{\numberline {47}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการวัดแรงดันที่จุดจ่ายไฟหลัก}}{73}{table.caption.122}%
+\contentsline {table}{\numberline {48}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ E-Stop Hardware Interlock}}{73}{table.caption.124}%
+\contentsline {table}{\numberline {49}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผลการทดสอบ Pilot Lamp แต่ละสถานะ}}{73}{table.caption.126}%
+\contentsline {table}{\numberline {50}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ผล Unit Test Joystick แต่ละโหมด}}{73}{table.caption.127}%
+\contentsline {table}{\numberline {51}{\ignorespaces ตาราง V\&V รวม ทั้ง 32 Requirements}}{74}{table.51}%
+\contentsline {table}{\numberline {52}{\ignorespaces \xpg@aux {}{thai}\ignorespaces สรุปสถานะ V\&V แยกตาม Category}}{76}{table.caption.128}%
+\contentsline {table}{\numberline {53}{\ignorespaces \xpg@aux {}{thai}\ignorespaces กำหนดการงานสำคัญก่อน Final Demo}}{79}{table.caption.140}%
+\contentsline {table}{\numberline {54}{\ignorespaces \xpg@aux {}{thai}\ignorespaces ตารางสรุปผลการคำนวณการขับเคลื่อนและ Safety Factor}}{94}{table.caption.159}%

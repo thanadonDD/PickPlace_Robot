@@ -103,72 +103,74 @@
 \contentsline {subsection}{\numberline {3.2}การจัดระเบียบสายไฟและระบบไฟฟ้า (Cable Management)}{54}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}แบบวิศวกรรม (Engineering Drawing)}{54}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}ปัญหาและการแก้ไขที่พบระหว่างการประกอบ}{54}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}ผลการตรวจสอบขนาดจริง}{55}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}การประกอบตู้ควบคุมไฟฟ้า (Electrical Cabinet Assembly)}{56}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}รายการอุปกรณ์ภายในตู้}{56}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}ผลการประกอบตู้ควบคุม}{56}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}สถาปัตยกรรม STM32 Firmware (Firmware Architecture)}{56}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}ภาพรวมสถาปัตยกรรม Firmware}{56}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}โครงสร้างไฟล์และโมดูล (Code Structure)}{57}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Interrupt Service Routine (ISR) และ Timing}{57}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}การทำงานร่วมกันของโมดูล (Module Interaction)}{58}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}การ Implement S-Curve Motion Profile ใน Firmware}{58}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}Joystick Mode และการ Map ปุ่ม}{59}{subsubsection.3.4.6}%
-\contentsline {section}{\numberline {4}การบูรณาการระบบ (System Integration)}{59}{section.4}%
-\contentsline {subsection}{\numberline {4.1}สถาปัตยกรรมการบูรณาการ}{59}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}การเชื่อมต่อ STM32 กับ Motor และ Encoder}{59}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}การเชื่อมต่อ Joystick}{60}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}การเชื่อมต่อ Modbus กับ Base System}{60}{subsection.4.4}%
-\contentsline {paragraph}{Modbus Register Map}{61}{paragraph*.94}%
-\contentsline {subsection}{\numberline {4.5}แผนการทดสอบ End-to-End}{62}{subsection.4.5}%
-\contentsline {section}{\numberline {5}ผลการทดสอบ (Test Results)}{62}{section.5}%
-\contentsline {subsection}{\numberline {5.1}ผลการทดสอบ Progress Update 1}{62}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}ผล FEA และการคำนวณ Deflection}{62}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}ผลการคำนวณ Motion Profile (ทฤษฎี)}{62}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}การทำ System Identification}{63}{subsubsection.5.1.3}%
-\contentsline {paragraph}{Locked Rotor Test}{63}{paragraph*.99}%
-\contentsline {paragraph}{Grey-box Parameter Estimation}{63}{paragraph*.101}%
-\contentsline {subsection}{\numberline {5.2}ผลการตรวจสอบความถูกต้องของแบบจำลอง (Model Validation)}{64}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}ผลการจำลองสมรรถนะการควบคุม (Control Performance Simulation)}{66}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}ผลการวิเคราะห์และหาค่าพารามิเตอร์ที่เหมาะสม (Optimization Results)}{68}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}ผลการทดสอบ Progress Update 2 (Unit Tests)}{70}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Unit Test: การอ่านค่า Encoder และ PWM (Deliverable 2)}{70}{subsubsection.5.5.1}%
-\contentsline {paragraph}{การตั้งค่า Encoder}{70}{paragraph*.114}%
-\contentsline {paragraph}{ผลการทดสอบความถูกต้องของ Encoder}{71}{paragraph*.115}%
-\contentsline {paragraph}{การตั้งค่า PWM}{71}{paragraph*.117}%
-\contentsline {subsubsection}{\numberline {5.5.2}Unit Test: ตู้ควบคุมไฟฟ้า (Deliverable 1)}{71}{subsubsection.5.5.2}%
-\contentsline {paragraph}{Power Distribution Test}{71}{paragraph*.119}%
-\contentsline {paragraph}{E-Stop Hardware Interlock Test}{72}{paragraph*.121}%
-\contentsline {paragraph}{Pilot Lamp Test}{72}{paragraph*.123}%
-\contentsline {subsubsection}{\numberline {5.5.3}Unit Test: ตู้ควบคุมไฟฟ้า (Deliverable 1)}{73}{subsubsection.5.5.3}%
-\contentsline {subsubsection}{\numberline {5.5.4}ผล Simulation Simscape}{73}{subsubsection.5.5.4}%
-\contentsline {section}{\numberline {6}การตรวจสอบและทวนสอบ (Verification and Validation)}{73}{section.6}%
-\contentsline {subsection}{\numberline {6.1}ภาพรวม V\&V Framework}{73}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}ตาราง V\&V รวมทั้งหมด (32 Requirements)}{73}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}สรุปสถานะ V\&V ตาม Category}{75}{subsection.6.3}%
-\contentsline {section}{\numberline {7}สรุปผลและแนวทางต่อไป (Conclusion)}{75}{section.7}%
-\contentsline {subsection}{\numberline {7.1}สรุปผลงาน Progress Update 1}{75}{subsection.7.1}%
-\contentsline {paragraph}{ด้านการออกแบบเชิงกล}{75}{paragraph*.127}%
-\contentsline {paragraph}{ด้าน Motion Profile}{75}{paragraph*.128}%
-\contentsline {paragraph}{ด้านการออกแบบระบบไฟฟ้า}{76}{paragraph*.129}%
-\contentsline {paragraph}{ปัญหาที่พบและวิธีแก้ไขใน Progress Update 1}{76}{paragraph*.130}%
-\contentsline {subsection}{\numberline {7.2}สรุปผลงาน Progress Update 2}{76}{subsection.7.2}%
-\contentsline {paragraph}{Deliverable 1 --- ตู้ควบคุมไฟฟ้า}{76}{paragraph*.131}%
-\contentsline {paragraph}{Deliverable 2 --- การอ่านค่า Encoder และส่งสัญญาณ PWM}{76}{paragraph*.132}%
-\contentsline {paragraph}{Deliverable 3 --- Cascade PID + S-Curve Closed-Loop}{76}{paragraph*.133}%
-\contentsline {paragraph}{Deliverable 4 --- ระบบ Joystick ทุกโหมด}{76}{paragraph*.134}%
-\contentsline {paragraph}{Deliverable 5 --- การเชื่อมต่อ Modbus}{76}{paragraph*.135}%
-\contentsline {paragraph}{Deliverable 6 --- System Identification}{77}{paragraph*.136}%
-\contentsline {paragraph}{ปัญหาที่พบและวิธีแก้ไขใน Progress Update 2}{77}{paragraph*.137}%
-\contentsline {subsection}{\numberline {7.3}แนวทางและแผนงานต่อไป (Future Work)}{77}{subsection.7.3}%
-\contentsline {section}{\numberline {A}รายละเอียด Engineering Drawing}{78}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}CAD Assembly (Full)}{78}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Exploded View}{79}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Drawing แต่ละชิ้นส่วน}{86}{subsection.A.3}%
-\contentsline {section}{\numberline {B}รายละเอียดการคำนวณเชิงกล}{92}{appendix.B}%
-\contentsline {subsubsection}{\numberline {B.0.1}การคำนวณแรงบิดและการเลือกมอเตอร์}{92}{subsubsection.B.0.1}%
-\contentsline {section}{\numberline {C}รายละเอียดการคำนวณ Motion Profile}{93}{appendix.C}%
-\contentsline {section}{\numberline {D}Schematic ไฟฟ้าฉบับเต็ม}{93}{appendix.D}%
-\contentsline {section}{\numberline {E}Code Snippet หลักของ STM32 Firmware}{93}{appendix.E}%
-\contentsline {section}{\numberline {F}ผลการ Simulation Simscape ฉบับเต็ม}{93}{appendix.F}%
-\contentsline {section}{\numberline {G}Log การทดสอบ Unit Test}{94}{appendix.G}%
+\contentsline {subsubsection}{\numberline {3.2.3}สรุปความคลาดเคลื่อนของชิ้นงานเทียบกับ Drawing และแนวทางการแก้ไข}{55}{subsubsection.3.2.3}%
+\contentsline {paragraph}{3.2.3.1 ตารางสรุปภาพรวมชิ้นงานที่พบปัญหา (Master Summary of Discrepancies)}{55}{paragraph*.88}%
+\contentsline {paragraph}{3.2.3.2 สรุปสาเหตุร่วมของระบบและแนวทางแก้ไขภาพรวม (Systemic Issues \& Corrective Actions)}{55}{paragraph*.90}%
+\contentsline {subsection}{\numberline {3.3}การประกอบตู้ควบคุมไฟฟ้า (Electrical Cabinet Assembly)}{57}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}รายการอุปกรณ์ภายในตู้}{57}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}ผลการประกอบตู้ควบคุม}{57}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}สถาปัตยกรรม STM32 Firmware (Firmware Architecture)}{57}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}ภาพรวมสถาปัตยกรรม Firmware}{57}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}โครงสร้างไฟล์และโมดูล (Code Structure)}{58}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Interrupt Service Routine (ISR) และ Timing}{58}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}การทำงานร่วมกันของโมดูล (Module Interaction)}{59}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}การ Implement S-Curve Motion Profile ใน Firmware}{59}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Joystick Mode และการ Map ปุ่ม}{60}{subsubsection.3.4.6}%
+\contentsline {section}{\numberline {4}การบูรณาการระบบ (System Integration)}{60}{section.4}%
+\contentsline {subsection}{\numberline {4.1}สถาปัตยกรรมการบูรณาการ}{60}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}การเชื่อมต่อ STM32 กับ Motor และ Encoder}{60}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}การเชื่อมต่อ Joystick}{61}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}การเชื่อมต่อ Modbus กับ Base System}{61}{subsection.4.4}%
+\contentsline {paragraph}{Modbus Register Map}{62}{paragraph*.96}%
+\contentsline {subsection}{\numberline {4.5}แผนการทดสอบ End-to-End}{63}{subsection.4.5}%
+\contentsline {section}{\numberline {5}ผลการทดสอบ (Test Results)}{63}{section.5}%
+\contentsline {subsection}{\numberline {5.1}ผลการทดสอบ Progress Update 1}{63}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}ผล FEA และการคำนวณ Deflection}{63}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}ผลการคำนวณ Motion Profile (ทฤษฎี)}{63}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}การทำ System Identification}{64}{subsubsection.5.1.3}%
+\contentsline {paragraph}{Locked Rotor Test}{64}{paragraph*.101}%
+\contentsline {paragraph}{Grey-box Parameter Estimation}{64}{paragraph*.103}%
+\contentsline {subsection}{\numberline {5.2}ผลการตรวจสอบความถูกต้องของแบบจำลอง (Model Validation)}{65}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}ผลการจำลองสมรรถนะการควบคุม (Control Performance Simulation)}{67}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}ผลการวิเคราะห์และหาค่าพารามิเตอร์ที่เหมาะสม (Optimization Results)}{69}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}ผลการทดสอบ Progress Update 2 (Unit Tests)}{71}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Unit Test: การอ่านค่า Encoder และ PWM (Deliverable 2)}{71}{subsubsection.5.5.1}%
+\contentsline {paragraph}{การตั้งค่า Encoder}{71}{paragraph*.116}%
+\contentsline {paragraph}{ผลการทดสอบความถูกต้องของ Encoder}{72}{paragraph*.117}%
+\contentsline {paragraph}{การตั้งค่า PWM}{72}{paragraph*.119}%
+\contentsline {subsubsection}{\numberline {5.5.2}Unit Test: ตู้ควบคุมไฟฟ้า (Deliverable 1)}{72}{subsubsection.5.5.2}%
+\contentsline {paragraph}{Power Distribution Test}{72}{paragraph*.121}%
+\contentsline {paragraph}{E-Stop Hardware Interlock Test}{73}{paragraph*.123}%
+\contentsline {paragraph}{Pilot Lamp Test}{73}{paragraph*.125}%
+\contentsline {subsubsection}{\numberline {5.5.3}Unit Test: ตู้ควบคุมไฟฟ้า (Deliverable 1)}{74}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}ผล Simulation Simscape}{74}{subsubsection.5.5.4}%
+\contentsline {section}{\numberline {6}การตรวจสอบและทวนสอบ (Verification and Validation)}{74}{section.6}%
+\contentsline {subsection}{\numberline {6.1}ภาพรวม V\&V Framework}{74}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}ตาราง V\&V รวมทั้งหมด (32 Requirements)}{74}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}สรุปสถานะ V\&V ตาม Category}{76}{subsection.6.3}%
+\contentsline {section}{\numberline {7}สรุปผลและแนวทางต่อไป (Conclusion)}{76}{section.7}%
+\contentsline {subsection}{\numberline {7.1}สรุปผลงาน Progress Update 1}{76}{subsection.7.1}%
+\contentsline {paragraph}{ด้านการออกแบบเชิงกล}{76}{paragraph*.129}%
+\contentsline {paragraph}{ด้าน Motion Profile}{76}{paragraph*.130}%
+\contentsline {paragraph}{ด้านการออกแบบระบบไฟฟ้า}{77}{paragraph*.131}%
+\contentsline {paragraph}{ปัญหาที่พบและวิธีแก้ไขใน Progress Update 1}{77}{paragraph*.132}%
+\contentsline {subsection}{\numberline {7.2}สรุปผลงาน Progress Update 2}{77}{subsection.7.2}%
+\contentsline {paragraph}{Deliverable 1 --- ตู้ควบคุมไฟฟ้า}{77}{paragraph*.133}%
+\contentsline {paragraph}{Deliverable 2 --- การอ่านค่า Encoder และส่งสัญญาณ PWM}{77}{paragraph*.134}%
+\contentsline {paragraph}{Deliverable 3 --- Cascade PID + S-Curve Closed-Loop}{77}{paragraph*.135}%
+\contentsline {paragraph}{Deliverable 4 --- ระบบ Joystick ทุกโหมด}{77}{paragraph*.136}%
+\contentsline {paragraph}{Deliverable 5 --- การเชื่อมต่อ Modbus}{77}{paragraph*.137}%
+\contentsline {paragraph}{Deliverable 6 --- System Identification}{78}{paragraph*.138}%
+\contentsline {paragraph}{ปัญหาที่พบและวิธีแก้ไขใน Progress Update 2}{78}{paragraph*.139}%
+\contentsline {subsection}{\numberline {7.3}แนวทางและแผนงานต่อไป (Future Work)}{78}{subsection.7.3}%
+\contentsline {section}{\numberline {A}รายละเอียด Engineering Drawing}{79}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}CAD Assembly (Full)}{79}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Exploded View}{80}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Drawing แต่ละชิ้นส่วน}{87}{subsection.A.3}%
+\contentsline {section}{\numberline {B}รายละเอียดการคำนวณเชิงกล}{93}{appendix.B}%
+\contentsline {subsubsection}{\numberline {B.0.1}การคำนวณแรงบิดและการเลือกมอเตอร์}{93}{subsubsection.B.0.1}%
+\contentsline {section}{\numberline {C}รายละเอียดการคำนวณ Motion Profile}{94}{appendix.C}%
+\contentsline {section}{\numberline {D}Schematic ไฟฟ้าฉบับเต็ม}{94}{appendix.D}%
+\contentsline {section}{\numberline {E}Code Snippet หลักของ STM32 Firmware}{94}{appendix.E}%
+\contentsline {section}{\numberline {F}ผลการ Simulation Simscape ฉบับเต็ม}{94}{appendix.F}%
+\contentsline {section}{\numberline {G}Log การทดสอบ Unit Test}{95}{appendix.G}%
