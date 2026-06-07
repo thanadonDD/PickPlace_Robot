@@ -12,15 +12,11 @@
 % ============================================================
 
 \subsubsection{สถาปัตยกรรมเชิงกลโดยรวม}
-\label{subsubsec:mechanical_architecture}
-% อธิบาย Layout ของ Arm, Base, Shaft, Pulley, Belt
-
 \begin{figure}[H]
-  \centering
-%   \includegraphics[width=0.75\textwidth]{images/mech_cad_overview.png}
-  % [ใส่ภาพ CAD Assembly ด้านข้าง/ด้านบน แสดง Layout ทั้งหมด]
-  \caption{CAD Assembly ของระบบเชิงกล}
-  \label{fig:mech_cad}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Full_CAD.png}
+    \caption{CAD Assembly ของระบบเชิงกล}
+    \label{fig:cad_assembly_overall}
 \end{figure}
 
 % ------------------------------------------------------------
@@ -464,143 +460,213 @@ $b_{req} = \max(3.9,\ 3.25) = 3.9\,\text{mm}$
   \end{tabular}
 \end{table}
 
+
+
 \subsubsection{การเลือก Bearing}
 \label{subsubsec:bearing_selection}
-% ประเภท Bearing ที่ใช้, Load Rating, Life Calculation (L10)
-% ค่าที่ได้: [ใส่ค่าจริง]
+\subsubsection{การเลือกตลับลูกปืนและการคำนวณอายุการใช้งาน}
+ในการออกแบบระบบเพลาได้ทำการเลือกใช้ตลับลูกปืน 2 ตำแหน่งเพื่อรองรับภาระโหลดที่เกิดขึ้นโดยอ้างอิง การคำนวณอายุการใช้งานพื้นฐาน (Basic Rating Life) ตามมาตรฐาน ISO 281 ภายใต้สภาวะการทำงานที่ ความเร็วรอบเพลา 85 RPM ดังนี้
 
-% ------------------------------------------------------------
-\subsection{การวิเคราะห์การโก่งตัว (Deflection Analysis)}
-\label{subsec:deflection}
-% ------------------------------------------------------------
-
-\subsubsection{การวิเคราะห์โครงสร้างแขนกลด้วย FEA}
-\label{subsubsec:arm_fea_analysis}
-
-การวิเคราะห์ Finite Element Analysis (FEA)
-ดำเนินการด้วย SOLIDWORKS Simulation (Static Study)
-เพื่อตรวจสอบความแข็งแรงและการโก่งตัวของแขนกล
-ภายใต้โหลดสูงสุด 2\,kg ตามข้อกำหนด M3
-
-\paragraph{คุณสมบัติวัสดุ}
-
-\begin{table}[H]
-  \centering
-  \caption{คุณสมบัติวัสดุที่ใช้ใน FEA (Galvanized Steel)}
-  \label{tab:fea_material}
-  \begin{tabular}{lll}
-    \toprule
-    คุณสมบัติ & ค่า & หน่วย \\
-    \midrule
-    Model Type        & Linear Elastic Isotropic & -- \\
-    Yield Strength    & $2.35 \times 10^{8}$     & N/m$^2$ \\
-    Tensile Strength  & $4.00 \times 10^{8}$     & N/m$^2$ \\
-    Elastic Modulus   & $2.00 \times 10^{11}$    & N/m$^2$ \\
-    Poisson's Ratio   & 0.26                     & -- \\
-    Mass Density      & 7,850                    & kg/m$^3$ \\
-    Shear Modulus     & $7.93 \times 10^{10}$    & N/m$^2$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\paragraph{เงื่อนไขการวิเคราะห์}
-
+สมการการคำนวณอายุการใช้งาน อายุการใช้งานพื้นฐานในหน่วยชั่วโมง ($L_{10h}$) คำนวณได้จากสมการ
+\begin{equation}
+    L_{10h} = \frac{10^6}{60 \cdot n} \left(\frac{C}{P}\right)^p
+\end{equation}
+โดยที่:
 \begin{itemize}
-  \item \textbf{Fixture}: Fixed Geometry ที่ปลายด้านยึด
-        (Fixed-4: 1 edge, 7 faces;
-         Fixed-5: 5 faces)
-  \item \textbf{Load}: Gravity $-9.81$\,m/s$^2$
-        และ Remote Load (Distributed) มวล 2.76\,kg
-        ที่ตำแหน่งอ้างอิง
-        $(-0.9,\ -46.82,\ 55.88)$\,mm
-        จำลอง Gripper และ Connection Rod รวมกัน
-  \item \textbf{Mesh}: Solid Mesh,
-        Blended Curvature-based,
-        Element Size 1.15--11.82\,mm,
-        High Quality (Jacobian 16 Points),
-        11,607 Nodes, 5,722 Elements,
-        Max Aspect Ratio 8.181
+    \item $n$ = ความเร็วรอบในการใช้งาน (85 RPM)
+    \item $C$ = พิกัดการรับน้ำหนักพลวัต (Dynamic Load Rating) ของตลับลูกปืน
+    \item $P$ = แรงสมมูลพลวัต (Equivalent Dynamic Bearing Load)
+    \item $p$ = เลขยกกำลังตามชนิดของตลับลูกปืน ($p = 3$ สำหรับตลับลูกปืนเม็ดกลม และ $p = 10/3$ สำหรับตลับลูกปืนเม็ดลูกกลิ้ง)
 \end{itemize}
 
-\paragraph{ผลการวิเคราะห์ FEA}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/FBDshaft.png}
+    \caption{แผนภาพแสดงแรงกระทำและตำแหน่งของตลับลูกปืนบนเพลา}
+    \label{fig:bearing_load_diagram}
+\end{figure}
+
+\textbf{รายละเอียดตลับลูกปืนแต่ละตำแหน่ง}
+\begin{itemize}
+    \item \textbf{ตลับลูกปืนเม็ดเรียว (Taper Roller Bearing - SKF 30203):} ใช้เป็นตลับลูกปืนหลักในการรับแรงดึงสายพานและโมเมนต์ดัด มีพิกัดการรับน้ำหนักพลวัต $C = 23.4$ kN จากการวิเคราะห์พบว่าอัตราส่วนแรง $F_a/F_r < e$ ($0.14 < 0.35$) ทำให้ได้ค่า Equivalent Load $P = 0.26$ kN คำนวณอายุการใช้งานได้ประมาณ $6.1 \times 10^8$ ชั่วโมง
+    \item \textbf{ตลับลูกปืนเม็ดกลมร่องลึก (Deep Groove Ball Bearing - F6901ZZ):} ใช้เป็นตลับลูกปืนประคอง (Secondary Support) มีพิกัดการรับน้ำหนักพลวัต $C = 2.886$ kN และมีแรงสมมูลที่กระทำต่อตลับลูกปืนจุดนี้ $P = 0.1388$ kN คำนวณอายุการใช้งานได้ประมาณ $1.76 \times 10^6$ ชั่วโมง
+\end{itemize}
 
 \begin{table}[H]
-  \centering
-  \caption{ผลการวิเคราะห์ FEA เทียบกับเกณฑ์ M3}
-  \label{tab:fea_results}
-  \begin{tabular}{lcccc}
-    \toprule
-    พารามิเตอร์ & ผล FEA & เกณฑ์ M3 & หน่วย & ผล \\
-    \midrule
-    Max Displacement (URES)
-      & 0.2281 & $\leq 1.0$ & mm & \textbf{ผ่าน} \\
-    Max von Mises Stress
-      & $2.131 \times 10^7$ & $< 2.35 \times 10^8$ & N/m$^2$ & \textbf{ผ่าน} \\
-    Min Factor of Safety
-      & 11.03 & $> 1.0$ & -- & \textbf{ผ่าน} \\
-    \bottomrule
-  \end{tabular}
+    \centering
+    \caption{สรุปผลการคำนวณภาระและอายุการใช้งานของตลับลูกปืน}
+    \label{tab:bearing_life}
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{ตำแหน่ง / รุ่นตลับลูกปืน} & \textbf{$C$ (kN)} & \textbf{$P$ (kN)} & \textbf{$L_{10h}$ (Hours)} & \textbf{ผลการประเมิน} \\
+        \midrule
+        SKF 30203 (Taper Roller) & 23.400 & 0.2600 & $6.1 \times 10^8$ & \textbf{ผ่าน} \\
+        F6901ZZ (Deep Groove Ball) & 2.886 & 0.1388 & $1.76 \times 10^6$ & \textbf{ผ่าน} \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
-ผลการวิเคราะห์แสดงให้เห็นว่าการโก่งตัวสูงสุด
-$\delta_{max} = 0.2281$\,mm ต่ำกว่าเกณฑ์ 1\,mm
-อย่างมีนัยสำคัญ และค่าความเค้น Von Mises สูงสุด
-$\sigma_{max} = 2.131 \times 10^7$\,N/m$^2$
-คิดเป็นเพียง 9.1\% ของ Yield Strength
-($\sigma_y = 2.35 \times 10^8$\,N/m$^2$)
-ส่งผลให้ Factor of Safety ต่ำสุด = 11.03
-ซึ่งสูงกว่าเกณฑ์ขั้นต่ำอย่างปลอดภัย
-โครงสร้างแขนกลจึงรับโหลด 2\,kg
-ได้อย่างปลอดภัยตามข้อกำหนด M3
+\textbf{สรุปผลการประเมิน} จากการเปรียบเทียบกับเกณฑ์มาตรฐานการออกแบบเครื่องจักรกลทั่วไปที่มักกำหนดเป้าหมายอายุการใช้งานไว้ที่ 20,000 – 100,000 ชั่วโมง \citep{skf_bearing} พบว่าตลับลูกปืนทั้งสองตำแหน่งที่เลือกใช้มีอายุการใช้งานทางทฤษฎีสูงกว่าเกณฑ์ขั้นต่ำอย่างมีนัยสำคัญ จึงมีความเหมาะสมในการใช้งานภายใต้สภาวะโหลดที่กำหนด \citep{skf_bearing}
 
-% [รูป Von Mises Stress]
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.82\textwidth]{images/fea_stress.png}
-%   \caption{ผล FEA: Von Mises Stress Distribution
-%            บนแขนกลภายใต้โหลด 2\,kg
-%            (Max = $2.131 \times 10^7$\,N/m$^2$,
-%             Yield Strength = $2.35 \times 10^8$\,N/m$^2$)}
-%   \label{fig:fea_stress}
-% \end{figure}
+%--------------------------------------------------------------------------------------------------------------------------
 
-% [รูป Displacement]
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.82\textwidth]{images/fea_displacement.png}
-%   \caption{ผล FEA: Resultant Displacement
-%            บนแขนกลภายใต้โหลด 2\,kg
-%            (Max = 0.2281\,mm)}
-%   \label{fig:fea_displacement}
-% \end{figure}
+% ----------------------------------------------------------------------------
+% การวิเคราะห์การโก่งตัว (Deflection Analysis)
+% ----------------------------------------------------------------------------
+\subsection{การวิเคราะห์การโก่งตัว (Deflection Analysis)}
+\label{subsec:deflection_analysis}
 
-% [รูป Factor of Safety]
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.82\textwidth]{images/fea_fos.png}
-%   \caption{ผล FEA: Factor of Safety Distribution
-%            (Min FOS = 11.03 ที่จุดยึดแขนกล)}
-%   \label{fig:fea_fos}
-% \end{figure}
+\subsubsection{ผล FEA และการคํานวณ Deflection (ภายใต้ โหลด 2.7 kg)}
+\label{subsubsec:fea_deflection_calculation}
 
-% \subsubsection{Motion Profile การเคลื่อนที่ (S-Curve)}
-% % การคำนวณ Motion Profile แบบ S-Curve
-% % เวลารวม: 34.39 s (ทฤษฎี <= 35 s ตาม P1)
+\textbf{ก. ข้อมูลเริ่มต้นและสภาวะการทดสอบ (Test Conditions \& Parameters)}
+\begin{itemize}
+    \item \textbf{แรงกระทำ (Applied Load):} ใช้วัตถุที่มีน้ำหนักรวม 2.7 kg (คิดเป็นแรงกระทำประมาณ $F = mg = 2.7 \times 9.81 = 26.487$ N)
+    \item \textbf{วัสดุที่ใช้ในการทดสอบ:} แป๊บโปร่งกัลวาไนซ์ (Galvanized Square Pipe) มาตรฐาน มอก. ขนาด 25 x 25 มม. ความหนา 2.3 มม.
+    \item \textbf{ลักษณะจุดรองรับ (Boundary Conditions):} ทำการยึดฐานของหุ่นยนต์เข้ากับหน้าโต๊ะด้วยอุปกรณ์ C-Clamp (เสมือนจุดรองรับแบบยึดแน่น หรือ Fixed Support) โดยให้ Load กดลงที่บริเวณปลายแขนของหุ่นยนต์ ทั้งนี้ได้มีการเผื่อระยะพื้นที่บริเวณปลายแขนสำหรับติดตั้งไดอัลเกจ (Dial Gauge) เพื่อทำการวัดค่า
+\end{itemize}
 
-% \begin{figure}[H]
-%   \centering
-% %   \includegraphics[width=0.85\textwidth]{images/motion_profile_scurve.png}
-%   % [ใส่ภาพกราฟ S-Curve: Position, Velocity, Acceleration vs Time]
-%   \caption{S-Curve Motion Profile ของการเคลื่อนที่ในหนึ่งรอบ}
-%   \label{fig:motion_profile}
-% \end{figure}
+\textbf{ข. ผลการวิเคราะห์ด้วยโปรแกรม (FEA Simulation Results)}
 
-% \begin{table}[H]
-%   \centering
-%   \caption{สรุปพารามิเตอร์ Motion Profile}
-%   \label{tab:motion_profile_params}
-%   % [ตาราง: พารามิเตอร์ | ค่าทฤษฎี | ค่าจริง | หน่วย]
-% \end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/ArmFEA.png}
+    \caption{แสดงการทำ FEA ใส่โหลดที่ 2.7 kg}
+    \label{fig:fea_deflection_2_7kg}
+\end{figure}
+
+ดำเนินการวิเคราะห์แบบ Static Study ผ่านโปรแกรม SOLIDWORKS Simulation เพื่อตรวจสอบความแข็งแรงและการโก่งตัวภายใต้เกณฑ์โหลดสูงสุด 2 kg (ตามข้อกำหนด M3) และทดสอบที่โหลดอ้างอิง 2.76 kg 
+
+\textbf{ผลลัพธ์ที่ได้:} 
+\begin{itemize}
+    \item จากผลการวิเคราะห์พบว่าระยะการโก่งตัวสูงสุด ($\delta_{max}$) คือ 0.2281 mm โดยเกิดการโก่งตัวมากที่สุดบริเวณปลายแขนที่รับภาระกรรม
+    \item ค่าความเค้น Von Mises สูงสุดอยู่ที่ $2.131 \times 10^7$ N/m$^2$ ซึ่งคิดเป็นเพียง 9.1\% ของ Yield Strength ($2.35 \times 10^8$ N/m$^2$)
+    \item ค่า Factor of Safety ต่ำสุดเท่ากับ 11.03 ซึ่งสูงกว่าเกณฑ์ขั้นต่ำอย่างปลอดภัย 
+\end{itemize}
+สรุปได้ว่าโครงสร้างสามารถรับโหลดได้อย่างปลอดภัยตามข้อกำหนด
+
+\textbf{ค. ผลการทดสอบการโก่งตัวจากชิ้นงานจริง (Experimental Results with 2.7 kg Load)}
+
+\textbf{วิธีการวัด:} ติดตั้งหัววัดของไดอัลเกจ (Dial Gauge) ให้สัมผัสกับตำแหน่งปลายสุดของแขนหุ่นยนต์ จากนั้นทำการเซ็ตศูนย์ (Set Zero) ที่มาตรวัด นำวัตถุน้ำหนัก 2.7 kg มากระทำที่ปลายแขนหุ่นยนต์ แล้วจึงอ่านค่าระยะการโก่งตัวที่เปลี่ยนไปจากหน้าปัดของไดอัลเกจ
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Deflection_1.jpg}
+        \caption{ตำแหน่งที่ใช้ Dial Gauge บนโครงสร้างชิ้นงานจริง}
+        \label{fig:dial_gauge_setup}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Deflection_2.jpg}
+        \caption{หน้าปัดมาตรวัดแสดงระยะโก่งตัว}
+        \label{fig:dial_gauge_reading}
+    \end{subfigure}
+    \caption{การทดสอบการโก่งตัวทางกลด้วย Dial Gauge}
+    \label{fig:dial_gauge_test}
+\end{figure}
+
+\textbf{ผลการทดสอบ:} จากการทดสอบจริง พบว่าระยะการโก่งตัว (Deflection) ที่วัดได้จากชิ้นงานมีค่าอยู่ที่ 0.75 mm
+
+\textbf{ง. การคำนวณองศาการบิดเบี้ยวของปลายแขนหุ่น (Deflection Angle Calculation)}
+
+เพื่อประเมินว่าปลายแขนของหุ่นยนต์ทำมุมเบี่ยงเบนไปจากแนวระนาบเดิมเท่าใด สามารถคำนวณองศาที่เบี้ยวไป ($\theta$) ได้จากหลักการทางตรีโกณมิติ โดยใช้ระยะการโก่งตัวที่วัดได้จริง ($\delta = 0.75$ mm) และระยะความยาวของแขนหุ่นยนต์ ($L = 403.1$ mm) วัดจากจุดหมุนจนถึงปลายตำแหน่งที่วัดค่าตามสมการที่ \ref{eq:deflection_angle}
+\begin{equation}
+    \theta = \arctan \left( \frac{\delta}{L} \right)
+    \label{eq:deflection_angle}
+\end{equation}
+
+ตัวอย่างการคำนวณ:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Armlength.png}
+        \caption{แสดงระยะจากจุดหมุนถึงปลายแขนรับน้ำหนัก}
+        \label{fig:arm_length_cad}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Trigonometry.png}
+        \caption{สามเหลี่ยมตรีโกณมิติแสดงมุมเบี่ยงเบนเชิงมุม}
+        \label{fig:deflection_triangle}
+    \end{subfigure}
+    \caption{การวิเคราะห์ระยะและมิติเชิงเรขาคณิตเพื่อคำนวณมุมบิดเบี้ยว}
+    \label{fig:deflection_geometry_analysis}
+\end{figure}
+
+\begin{equation}
+    \theta = \arctan \left( \frac{0.75}{403.1} \right) = 0.1066^\circ
+\end{equation}
+
+\textbf{สรุปผล:} ปลายแขนหุ่นยนต์มีมุมบิดเบี้ยวเบี่ยงเบนไปจากแนวระนาบประมาณ $0.1066^\circ$ 
+
+\textbf{จ. การเปรียบเทียบผลลัพธ์และการวิเคราะห์ (Comparison \& Discussion)}
+
+\begin{table}[H]
+    \centering
+    \caption{เปรียบเทียบค่าการโก่งตัวและเปอร์เซ็นต์ความคลาดเคลื่อนภายใต้แรง 2.7 kg}
+    \label{tab:deflection_comparison}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{วิธีการประเมินผล} & \textbf{ระยะการโก่งตัว (mm)} & \textbf{ความคลาดเคลื่อน (\% Error)} \\
+        \midrule
+        การวิเคราะห์ด้วย FEA (Simulation) & 0.2281 & 69.58\% \\
+        การทดสอบจากชิ้นงานจริง (Experiment) & 0.75 & 0.00\% (ค่าอ้างอิง) \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+สูตรคำนวณความคลาดเคลื่อนเทียบจากการทดลองจริงคือสมการที่ \ref{eq:error_calc} และคำนวณได้ดังสมการที่ \ref{eq:error_result}
+\begin{equation}
+    \% \text{ Error} = \frac{|\text{Real} - \text{FEA}|}{\text{Real}} \times 100 
+    \label{eq:error_calc}
+\end{equation}
+\begin{equation}
+    \% \text{ Error} = \frac{|0.75 - 0.2281|}{0.75} \times 100 = 69.58\%
+    \label{eq:error_result}
+\end{equation}
+
+\textbf{การอภิปรายผล (Discussion):}
+จากตารางที่ \ref{tab:deflection_comparison} พบว่าระยะการโก่งตัวจากการทดสอบจริง (0.75 mm) มีค่ามากกว่าผลที่ได้จากการจำลองด้วย FEA (0.2281 mm) อย่างมีนัยสำคัญ โดยมีความคลาดเคลื่อนอยู่ที่ 69.58\% ซึ่งสามารถวิเคราะห์สาเหตุของความแตกต่างนี้ได้จากปัจจัยต่างๆ ดังนี้:
+\begin{itemize}
+    \item \textbf{ลักษณะของจุดรองรับ (Boundary Condition Mismatch):} ในโปรแกรม FEA จุดรองรับถูกกำหนดให้เป็นแบบยึดแน่นสมบูรณ์ (Perfectly Fixed) แต่ในการทดลองจริง การยึดฐานด้วย C-Clamp อาจมีการให้ตัว (Flexibility) ได้เล็กน้อยเมื่อรับแรงกระทำ ทำให้เกิดมุมเงยหรือการบิดตัวที่ฐาน ซึ่งส่งผลขยายให้ระยะแอ่นตัวที่ปลายแขนมีค่ามากขึ้น
+    \item \textbf{ความคลาดเคลื่อนของรอยต่อและข้อต่อ:} หากแขนหุ่นยนต์มีการประกอบหรือมีรอยเชื่อม/ข้อต่อ ความหลวม (Backlash) หรือช่องว่างในจุดหมุนเหล่านั้นจะบวกเพิ่มเข้าไปในระยะโก่งตัวจริง ซึ่งโปรแกรม FEA (ที่วิเคราะห์แบบชิ้นเนื้อเดียวติดกันสมบูรณ์) ไม่ได้นำมาคำนวณรวมด้วย
+    \item \textbf{น้ำหนักของโครงสร้าง (Self-weight):} ในขั้นตอนการเซ็ตศูนย์ (Set Zero) ของการทดลองจริง ภาระกรรมของน้ำหนักแขนหุ่นยนต์อาจมีผลต่อการกระจายแรงเมื่อได้รับน้ำหนักเพิ่ม หรือความเค้นตกค้างในวัสดุ
+    \item \textbf{ความแม่นยำของเครื่องมือวัด:} แม้ไดอัลเกจจะมีความละเอียดสูง แต่ตำแหน่งจุดสัมผัส มุมในการตั้งเกจ หรือความสั่นสะเทือนขณะวางน้ำหนักทดสอบ อาจส่งผลให้ค่าที่อ่านได้มีความคลาดเคลื่อนจากการกระจัดเชิงเส้นแบบอุดมคติในโปรแกรม
+    \item \textbf{ความแตกต่างของจุดศูนย์กลางมวล (Center of Mass Discrepancy):} ในโปรแกรม FEA ภาระกรรม 2.7 kg มักถูกกำหนดให้กระทำลงบนตำแหน่งที่เจาะจงหรือมีจุดศูนย์กลางมวล (Center of Mass) ที่แม่นยำ (เช่น แรงกระทำแบบจุด หรือ Point Load) แต่ในการทดลองจริง วัตถุที่นำมาใช้เป็นน้ำหนักมีรูปทรง ขนาด และการกระจายน้ำหนักที่ต่างออกไป ทำให้ไม่สามารถจัดวางจุดศูนย์กลางมวลของวัตถุให้ตกลงบนตำแหน่งเดียวกับในแบบจำลองได้อย่างสมบูรณ์แบบ การเยื้องศูนย์ (Eccentricity) ของแนวแรงหรือแขนโมเมนต์ที่คลาดเคลื่อนไปเพียงเล็กน้อยนี้ จะส่งผลให้โมเมนต์ดัด (Bending Moment) ที่เกิดขึ้นจริงบนปลายแขนหุ่นยนต์มีค่าแตกต่างไปจากโปรแกรม และทำให้เกิดระยะการโก่งตัวที่มากขึ้นได้
+\end{itemize}
+
+% ----------------------------------------------------------------------------
+% การวิเคราะห์ระยะคลอน (Backlash Analysis)
+% ----------------------------------------------------------------------------
+\subsection{การวิเคราะห์ระยะคลอน (Backlash Analysis)}
+\label{subsec:backlash_analysis}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Backlash_1.jpg}
+        \caption{การติดตั้งหัววัด Dial Gauge}
+        \label{fig:backlash_setup_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Backlash_2.jpg}
+        \caption{ผลการอ่านค่าเมื่อออกแรงดัน}
+        \label{fig:backlash_setup_2}
+    \end{subfigure}
+    \caption{การทดสอบระยะคลอนด้วย Dial Gauge}
+    \label{fig:backlash_test_figure}
+\end{figure}
+
+ทดสอบโดยใช้เครื่องมือ Dial Gauge แล้วลองดันให้เกิด Backlash พบว่า ระยะคลอนมีระยะ 0.7 mm
+
 
 % ============================================================
 \subsection{การออกแบบระบบไฟฟ้าและอิเล็กทรอนิกส์ (Electronics Design)}
@@ -615,19 +681,18 @@ $\sigma_{max} = 2.131 \times 10^7$\,N/m$^2$
 โดยที่ Controller ยังคงมีไฟเลี้ยงอยู่ตามข้อกำหนด E6
 
 \textbf{วงจร High Power (24\,V Motor Bus):}
-ไฟ AC 220\,V เข้ามาผ่าน Circuit Breaker CB1 แล้วจ่ายให้ PSU 24\,V/10\,A
-Output ของ PSU ผ่าน NC Contact ของปุ่ม Emergency Stop
-แล้วต่อเข้า Coil ของ Magnetic Contactor
-เมื่อ Contactor ดึง หน้าสัมผัสหลักจะปิดและจ่ายไฟ 24\,V
-ไปยัง Motor Driver Cytron MD10C เพื่อขับมอเตอร์
-เมื่อกด Emergency Stop NC Contact เปิดออก
-Contactor De-energize และตัดไฟมอเตอร์ทันที
+ไฟ AC 220\,V เข้ามาผ่าน Circuit Breaker CB1 แล้ว จ่ายให้ PSU 24\,V/10\,A Output ของ PSU ผ่าน NC Contact 
+ของปุ่ม Emergency Stop แล้วต่อเข้า COM ของ Relay module เมื่อมีสัญญาณจาก Microcontroller หน้าสัมผัส NO 
+จะติดกันและส่งไฟกำลังไปเลี้ยง Coil ของ Magnetic contactor เมื่อ Contactor ถูกดึงหน้าสัมผัสจะจ่ายไฟกำลัง 24\,V 
+ไปยัง Motor driver Cytron MD10C เพื่อขับมอเตอร์ เมื่อกด Emergency Stop NC Contact เปิดออก Contactor 
+De-energize และตัดไฟมอเตอร์ทันที
 
 \textbf{วงจร Logic Power (5\,V Control Bus):}
-PSU 5\,V/5\,A ต่อตรงจาก AC 220\,V ก่อนถึง Emergency Stop
-ทำให้ STM32, ESP32, Encoder, Proximity Sensor
-และ Relay Module ยังคงมีไฟเลี้ยงอยู่แม้กด Emergency Stop
+ไฟ AC 220\,V เข้ามาผ่าน Circuit Breaker CB1 
+แล้ว จ่ายให้ PSU 5\,V/5\,A และส่งไฟไปเลี้ยง STM32, ESP32, Encoder, Proximity Sensor 
+และ Relay Module ผ่านฟิวส์ 2A ทำให้อุปกรณ์ยังคงมีไฟเลี้ยงอยู่แม้กด Emergency Stop 
 ระบบจึงสามารถรับคำสั่ง Reset และแสดงสถานะผ่าน Pilot Lamp ได้ตลอดเวลา
+
 
 สัญญาณดิจิทัลทุกเส้นที่เชื่อมระหว่าง High Voltage Side
 และ Logic Side ผ่าน Optocoupler Module 8 ช่อง
@@ -643,119 +708,94 @@ PSU 5\,V/5\,A ต่อตรงจาก AC 220\,V ก่อนถึง Emerge
   \label{fig:elec_block}
 \end{figure}
 
-% ------------------------------------------------------------
-\subsection{การคำนวณกำลังไฟฟ้า (Power Calculation)}
-\label{subsec:power_calc}
-% ------------------------------------------------------------
+% ----------------------------------------------------------------------------
+% 6.2 การคำนวณโหลดไฟฟ้า (Electrical Load Calculation)
+% ----------------------------------------------------------------------------
+\subsection{การคำนวณโหลดไฟฟ้า (Electrical Load Calculation)}
+\label{subsec:electrical_load_calculation}
 
-การเลือก Power Supply ดำเนินการโดยคำนวณกระแสรวม
-สูงสุดของอุปกรณ์ทุกตัวในแต่ละ Bus พร้อม Safety Margin
-20\% แบ่งออกเป็น 2 วงจรหลัก
+การคำนวณโหลดมีวัตถุประสงค์เพื่อยืนยันว่า PSU ที่เลือกใช้มีกำลังเพียงพอต่อโหลดสูงสุดของระบบ และเพื่อกำหนดขนาดฟิวส์ที่เหมาะสม
 
-\paragraph{24V Motor Bus}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{images/electrical_diagram.png}
+%     \caption{แผนภาพแสดงการจ่ายไฟของระบบ (Electrical Power Diagram)}
+%     \label{fig:electrical_diagram}
+% \end{figure}
 
-\begin{table}[H]
-  \centering
-  \caption{การคำนวณกำลังไฟฟ้าของ 24V Motor Bus (ค่าอัปเดต)}
-  \label{tab:power_24v}
-  \begin{tabular}{lccrp{4.5cm}}
-    \toprule
-    อุปกรณ์ & แรงดัน (V) & กระแสสูงสุด (A) & กำลังไฟฟ้า (W) & หมายเหตุ \\
-    \midrule
-    DC Motor ZGX60RMM  & 24 & 10.00 & 240.00 &
-      Peak current จาก Simulation
-      (S-Curve 360°, ตารางที่~\ref{tab:sim_vs_req}) \\
-    Motor Driver MD10C & 24 &  0.10 &   2.40 & -- \\
-    Contactor Coil     & 24 &  0.10 &   2.40 & -- \\
-    Relay Module       & 24 &  0.20 &   4.80 & -- \\
-    Solenoid Valve     & 24 &  0.50 &  12.00 & -- \\
-    \midrule
-    Safety Margin 20\% & -- &  2.18 &  52.32 & \\
-    \midrule
-    \textbf{รวม 24V Bus}
-      & \textbf{24} & \textbf{13.08} & \textbf{313.92} & \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-ผลการคำนวณเมื่อรวม Safety Margin 20\%:
-กระแสรวม 13.08\,A $>$ 10\,A ของ PSU 24V/10A
-อย่างไรก็ตาม Peak Current 10\,A เกิดขึ้นเพียงชั่วขณะ
-(Current Clamp Zone = 0.71\% ของเวลาการเคลื่อนที่ทั้งหมด
-ดังแสดงในตารางที่~\ref{tab:sim_vs_req})
-ซึ่งในการทดสอบ Hardware จริงไม่พบปัญหา
-PSU Voltage Drop หรือ Overcurrent Trip
-
-เพื่อให้ระบบมีความปลอดภัยในระยะยาว
-จะ Implement Software Current Clamp
-ใน Firmware ก่อน Demo โดยจำกัด
-Duty Cycle สูงสุดไม่ให้กระแสมอเตอร์
-เกิน 8\,A (80\% ของพิกัด PSU)
-ตามสมการ
-
-\begin{equation}
-  D_{max} = \frac{I_{limit} \cdot R_a}{V_{supply}}
-           = \frac{8.0 \times 1.4534}{24}
-           = 48.4\%
-  \label{eq:duty_clamp}
-\end{equation}
+\subsubsection{โหลดบน 24V Bus (Motor Power)}
+\label{subsubsec:load_24v_bus}
 
 \begin{table}[H]
-  \centering
-  \caption{การคำนวณกำลังไฟฟ้าของ 5V Logic Bus (ค่าอัปเดต)}
-  \label{tab:power_5v}
-  \begin{tabular}{lccr}
-    \toprule
-    อุปกรณ์ & แรงดัน (V) & กระแสสูงสุด (A) & กำลังไฟฟ้า (W) \\
-    \midrule
-    STM32G474RE Nucleo & 5 & 0.50 &  2.50 \\
-    ESP32 DevKit V1    & 5 & 0.50 &  2.50 \\
-    AMT-103 Encoder    & 5 & 0.10 &  0.50 \\
-    Proximity Sensor   & 5 & 0.05 &  0.25 \\
-    Optocoupler Module & 5 & 0.04 &  0.20 \\
-    Relay Module       & 5 & 0.10 &  0.50 \\
-    LED Indicator (×3) & 5 & 0.06 &  0.30 \\
-    Selector Switch    & 5 & 0.01 &  0.05 \\
-    \midrule
-    Safety Margin 20\% & -- & 0.27 &  1.36 \\
-    \midrule
-    \textbf{รวม 5V Bus}
-      & \textbf{5} & \textbf{1.63} & \textbf{8.16} \\
-    \bottomrule
-  \end{tabular}
+    \centering
+    \caption{การคำนวณโหลดบน 24V Bus (Motor Power)}
+    \label{tab:load_24v}
+    \begin{tabular}{llcc p{5cm}}
+        \toprule
+        \textbf{อุปกรณ์} & \textbf{แรงดัน} & \textbf{กระแสสูงสุด} & \textbf{กำลังไฟฟ้า} & \textbf{หมายเหตุ} \\
+        \midrule
+        DC Motor (ZGX60RMM) & 24V & 5 A & 120 W & กระแส Stall จาก Datasheet ประมาณ 5A แต่ในการทำงานปกติ $< 3.5$A \\
+        Motor Driver MD10C & 24V & 0.1 A & 2.4 W & Driver Loss เล็กน้อย (Static Loss) \\
+        Contactor Coil & 24V & 0.1 A & 2.4 W & ใช้ไฟตอน Energize \\
+        Relay Module (2 ช่อง) & 24V & 0.2 A & 4.8 W & ประมาณ 100 mA ต่อ Coil \\
+        Solenoid Valve (Gripper) & 24V & 0.5 A & 12 W & ประมาณตาม Solenoid ทั่วไป \\
+        Margin Safety 10\% & - & 0.59 A & 14.16 W & บวกเพิ่ม 10\% ของกระแสรวม (5.9 A) \\
+        \midrule
+        \textbf{รวม 24V Bus} & \textbf{24V} & $\approx\textbf{6.49 A}$ & $\approx\textbf{155.76 W}$ & \textbf{เพียงพอ (PSU 24V/10A = 240W)} \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
-ผลการคำนวณ: กระแสรวม 1.63\,A $<$ 5\,A ของ
-PSU 5V/5A ที่เลือกใช้ \textbf{(ผ่าน)}
+ค่ากระแสรวมบน 24V Bus อยู่ที่ประมาณ 5.28 A ซึ่งน้อยกว่าพิกัดของ PSU 24V/10A (240W) อยู่มาก มีกำลังเหลือ Margin ประมาณ 47\%
 
-\paragraph{5V Logic Bus}
+\subsubsection{โหลดบน 5V Bus (Logic Power)}
+\label{subsubsec:load_5v_bus}
 
 \begin{table}[H]
-  \centering
-  \caption{การคำนวณกำลังไฟฟ้าของ 5V Logic Bus}
-  \label{tab:power_5v}
-  \begin{tabular}{lccr}
-    \toprule
-    อุปกรณ์ & แรงดัน (V) & กระแสสูงสุด (A) & กำลังไฟฟ้า (W) \\
-    \midrule
-    STM32G474RE Nucleo & 5 & 0.50 & 2.50 \\
-    ESP32 DevKit V1    & 5 & 0.50 & 2.50 \\
-    AMT-103 Encoder    & 5 & 0.10 & 0.50 \\
-    Proximity Sensor   & 5 & 0.05 & 0.25 \\
-    Optocoupler Module & 5 & 0.04 & 0.20 \\
-    Relay Module       & 5 & 0.10 & 0.50 \\
-    LED Indicator (×3) & 5 & 0.06 & 0.30 \\
-    Selector Switch    & 5 & 0.01 & 0.05 \\
-    \midrule
-    Safety Margin 20\% & -- & 0.27 & 1.36 \\
-    \midrule
-    \textbf{รวม 5V Bus} & \textbf{5} & \textbf{1.63} & \textbf{8.16} \\
-    \bottomrule
-  \end{tabular}
+    \centering
+    \caption{การคำนวณโหลดบน 5V Bus (Logic Power)}
+    \label{tab:load_5v}
+    \begin{tabular}{llcc p{5cm}}
+        \toprule
+        \textbf{อุปกรณ์} & \textbf{แรงดัน} & \textbf{กระแสสูงสุด} & \textbf{กำลังไฟฟ้า} & \textbf{หมายเหตุ} \\
+        \midrule
+        STM32G474 Nucleo Board & 5V & 0.50 A & 2.50 W & จาก ST Datasheet \\
+        ESP32 DevKit V1 & 5V & 0.50 A & 2.50 W & Peak ระหว่าง Bluetooth/Wi-Fi Tx \\
+        AMT-103 Encoder & 5V & 0.10 A & 0.50 W & จาก CUI Datasheet \\
+        Proximity Sensor & 5V & 0.05 A & 0.25 W & Inductive Type ทั่วไป \\
+        Opto Module x2 & 5V & 0.04 A & 0.20 W & ประมาณ 20 mA ต่อชุด \\
+        Relay Module 1 & 5V & 0.10 A & 0.50 W & Coil 5V \\
+        LED Indicator x3 & 5V & 0.06 A & 0.30 W & 20 mA ต่อดวง \\
+        Selector Switch & 5V & 0.01 A & 0.05 W & ไม่มีนัยสำคัญ \\
+        Margin Safety 20\% & 5V & 0.27 A & 1.36 W & บวกเพิ่ม 20\% ของกระแสรวม (1.36 A) \\
+        \midrule
+        \textbf{รวม 5V Bus} & \textbf{5V} & $\approx\textbf{1.63 A}$ & $\approx\textbf{8.16 W}$ & \textbf{เพียงพอ (PSU 5V/5A = 25W)} \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
-ผลการคำนวณ: กระแสรวม 1.63\,A $<$ 4\,A ของ
-PSU 5V/4A ที่เลือกใช้ \textbf{(ผ่าน)}
+ค่ากระแสรวมบน 5V Bus อยู่ที่ประมาณ 1.63 A ซึ่งน้อยกว่าพิกัดของ PSU 5V/5A (25W) มีกำลังเหลือ Margin ประมาณ 67\%
+
+
+
+\subsubsection{สรุปการตรวจสอบ PSU}
+\label{subsubsec:psu_summary}
+
+\begin{table}[H]
+    \centering
+    \caption{สรุปผลการตรวจสอบแหล่งจ่ายไฟ (PSU)}
+    \label{tab:psu_summary}
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{PSU} & \textbf{พิกัด (Rated)} & \textbf{โหลดจริง (Actual Load)} & \textbf{Margin คงเหลือ} & \textbf{ผลการตรวจสอบ} \\
+        \midrule
+        PSU 24V/10A & 240 W & 126.7 W & 47\% & PASS \checkmark \\
+        PSU 5V/5A & 25 W & 8.17 W & 67\% & PASS \checkmark \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+PSU ทั้งสองชุดมีกำลังเพียงพอสำหรับโหลดสูงสุดของระบบ และยังมี Margin เหลือมากพอสำหรับการขยายระบบในอนาคต หรือรองรับโหลด Transient ที่อาจเกิดขึ้นในช่วง Motor Start-up ที่กระแสจะสูงกว่าปกติชั่วขณะ
 
 % ------------------------------------------------------------
 \subsection{การเลือก Circuit Breaker และ Fuse}
@@ -781,18 +821,24 @@ PSU 5V/4A ที่เลือกใช้ \textbf{(ผ่าน)}
   \end{tabular}
 \end{table}
 
+
+ฟิวส์เลือกขนาดตามสูตรมาตรฐาน IEC 60269 คือ $I_{fuse} \ge 1.25 \times I_{load}$
+
 \begin{table}[H]
-  \centering
-  \caption{การเลือกขนาด Fuse}
-  \label{tab:fuse_select}
-  \begin{tabular}{lccl}
-    \toprule
-    วงจร & กระแสโหลด (A) & ขนาดขั้นต่ำ ($\geq$1.25$\times$load) & ขนาดที่เลือก \\
-    \midrule
-    DC 24V -- Motor Branch & 5.28 & 6.60\,A & 8\,A \\
-    DC 5V -- Logic Branch  & 1.63 & 2.04\,A & 2.5\,A \\
-    \bottomrule
-  \end{tabular}
+    \centering
+    \caption{การเลือกขนาดฟิวส์ตามมาตรฐาน IEC 60269}
+    \label{tab:fuse_selection}
+    \begin{tabular}{p{3.5cm} p{4.5cm} cc}
+        \toprule
+        \textbf{วงจร} & \textbf{กระแสโหลด ($I_{load}$)} & \textbf{ขนาดฟิวส์ขั้นต่ำ} & \textbf{ขนาดที่เลือกใช้} \\
+         & & \textbf{($\ge 1.25 \times I_{load}$)} & \textbf{(Standard Size)} \\
+        \midrule
+        AC Input 24V Branch & ประมาณ 0.58 A (คำนวณจาก Power 126.7W) & 0.72 A & 1 A \\
+        5V AC Input Branch & $\approx 0.037$ A (คำนวณจาก Power 8.16W) & 0.046 A & 0.5 A \\
+        DC 24V Motor Branch & 5.28 A & 6.60 A & 8 A \\
+        DC 5V-Logic Branch & 1.63 A & 2.04 A & 2.5 A \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 % ============================================================
@@ -816,10 +862,9 @@ Magnetic Contactor, PSU 24\,V/10\,A และ PSU 5\,V/5\,A
 
 \subsubsection{การออกแบบ PCB (PCB Design)}
 \label{subsubsec:pcb_design}
-
-PCB ออกแบบด้วย KiCad 9.0.0 เพื่อรวม STM32G474RE Nucleo Board,
-ESP32-DEVKITC-32UE, Optocoupler Module, Relay Module,
-Encoder Connector และ Motor Driver Connector ไว้บน Board เดียวกัน
+PCB ออกแบบ ด้วย KiCad 9.0.0 เพื่อ รวม STM32G474RE Nucleo Board, ESP32-DEVKITC-32UE 
+และ Motor Driver Connector ไว้บน Board เดียวกัน และมี Terminal รองรับการต่อสายไฟจาก 
+Optocoupler Module, Relay Module, Encoder Connector  
 เพื่อลดจำนวนสายเชื่อมต่อภายในตู้ควบคุมและเพิ่มความเป็นระเบียบ
 
 \begin{figure}[H]

@@ -10,19 +10,19 @@
 
 ชิ้นส่วนหลักประกอบด้วย ส่วนฐาน (Base), ส่วนแขนกลและมอเตอร์ (Arm \& Motor), ชุดมือจับ (Gripper), ชุดเอ็นโค้ดเดอร์ (Encoder), สายพาน (Belt), คัปปลิ้ง (Coupling) และเพลาเชื่อมต่อเอ็นโค้ดเดอร์สนาม (Field Encoder Shaft) สำหรับเครื่องมือที่ใช้ในการประกอบ ได้แก่ ประแจหกเหลี่ยม ประแจปากตาย ประแจแหวน และค้อน
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.88\textwidth]{images/exploded_iso.png}
-%   \caption{ภาพรวมชิ้นส่วนของหุ่นยนต์ (Exploded View) ในมุม Isometric}
-%   \label{fig:exploded_iso}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{images/Explode_ISO.png}
+  \caption{ภาพรวมชิ้นส่วนของหุ่นยนต์ (Exploded View) ในมุม Isometric}
+  \label{fig:exploded_iso}
+\end{figure}
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.88\textwidth]{images/exploded_side.png}
-%   \caption{ภาพรวมชิ้นส่วนของหุ่นยนต์ (Exploded View) ในมุม Side View}
-%   \label{fig:exploded_side}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{images/Explode_side.png}
+  \caption{ภาพรวมชิ้นส่วนของหุ่นยนต์ (Exploded View) ในมุม Side View}
+  \label{fig:exploded_side}
+\end{figure}
 
 \subsubsection{ขั้นตอนการประกอบชิ้นส่วนย่อย (Sub-assembly Process)}
 \label{sec:sub_assembly}
@@ -159,22 +159,6 @@ Encoder & รุ่น AMT-103 & 1 \\
 \subsubsection{แบบวิศวกรรม (Engineering Drawing)}
 \label{subsubsec:engineering_drawing}
 
-รูปที่~\ref{fig:cad_assembly} แสดง CAD Assembly
-ของระบบเชิงกลทั้งหมด โดยมีมิติหลักได้แก่
-ฐาน 200$\times$200\,mm และรัศมีการทำงาน 500\,mm
-
-% [รูป CAD Assembly 3D]
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.85\textwidth]{images/cad_assembly_3d.png}
-%   \caption{CAD Assembly ของระบบเชิงกล
-%            แสดงชิ้นส่วนหลักทั้งหมด}
-%   \label{fig:cad_assembly}
-% \end{figure}
-
-รูปที่~\ref{fig:engineering_drawing} แสดง
-Engineering Drawing พร้อมมิติที่สำคัญ
-สำหรับการผลิตและประกอบ
 
 % [รูป Engineering Drawing 2D Top/Front/Side]
 % \begin{figure}[H]
@@ -186,8 +170,11 @@ Engineering Drawing พร้อมมิติที่สำคัญ
 %   \label{fig:engineering_drawing}
 % \end{figure}
 
-รายละเอียด Drawing แต่ละชิ้นส่วนแสดงใน
-Appendix~\ref{app:drawings}
+รูปที่~\ref{fig:engineering_drawing} แสดง
+Engineering Drawing พร้อมมิติที่สำคัญ
+สำหรับการผลิตและประกอบ
+
+รายละเอียด Drawing แต่ละชิ้นส่วนแสดงใน Appendix A
 
 \subsubsection{ปัญหาและการแก้ไขที่พบระหว่างการประกอบ}
 \label{subsubsec:assembly_issues}
@@ -205,6 +192,12 @@ Appendix~\ref{app:drawings}
   \item \textbf{ชิ้นแผ่นรอง Pulley}: ร้านผู้ผลิตไม่ได้ปาดผิวหน้า
         ชิ้นงานให้ราบเรียบตามแบบ และไม่ได้ร่อง Aluminium Profile
         ให้ตามที่กำหนด จึงต้องดำเนินการแก้ไขเพิ่มเติมเองใน Lab
+  \item \textbf{ปัญหา Shaft Tolerance และ Bearing Housing Tolerance:} 
+      ในชิ้นส่วน Shaft และ Bearing Housing มี Tolerance ที่ขนาดใหญ่มากเกินไปทำให้ไม่สามารถใส่ได้พอดี ทำให้ต้องเอาไปเข้าเครื่องกลึงแล้วเอากระดาษทรายขัดออกจนทำให้สามารถใส่อัดได้ด้วยมือ แต่เมื่อแก้แล้วทำให้ fit น้อยกว่าที่ตั้งใจไว้แต่แรก
+  \item \textbf{ความยาวสายพานที่ซื้อมานั้นมีขนาดสั้นกว่าที่วางแผนไว้:} 
+      ทำให้ต้องมีการปรับขนาดความยาวชิ้นส่วน 2 ส่วน เพื่อไว้สามารถทำให้สายพานตึงได้ตามที่ออกแบบไว้เมื่อใช้ร่วมกับ Tensioner Pulley ตามที่ออกแบบไว้
+  \item \textbf{มีการเจาะรูน็อตที่คลาดเคลื่อนที่ Pulley:} 
+      ทำให้ต้องไปเจาะเพิ่มในแนวใหม่ทั้ง 4 รู
 \end{itemize}
 
 \subsubsection{ผลการตรวจสอบขนาดจริง}
