@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.7)  8 JUN 2026 03:50
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.7)  8 JUN 2026 03:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1577,43 +1577,43 @@ File: images/Explode_ISO.png Graphic file (type bmp)
 File: images/Explode_side.png Graphic file (type bmp)
 <images/Explode_side.png>
  [49] [50] [51] [52] [53] [54]
-Overfull \hbox (26.04066pt too wide) in paragraph at lines 220--231
+Overfull \hbox (26.04066pt too wide) in paragraph at lines 218--229
  [][] 
  []
 
 
-Underfull \hbox (badness 5563) in paragraph at lines 236--237
+Underfull \hbox (badness 5563) in paragraph at lines 234--235
 [] []\TU/THSarabunNew(1)/b/n/12 3.2.3.2 สรุปสาเหตุร่วมของระบบและแนวทางแก้ไขภาพร
 วม (Systemic Issues & Corrective
  []
 
 [55] [56]
-Underfull \hbox (badness 3679) in paragraph at lines 332--337
+Underfull \hbox (badness 3679) in paragraph at lines 330--335
 []\TU/THSarabunNew(1)/m/n/12 Encoder อ่าน ค่า ตำแหน่ง และ ความเร็ว,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--351
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
 \TU/THSarabunNew(1)/m/n/12 State Machine (IDLE/ RECEPTION/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--358
+Underfull \hbox (badness 10000) in paragraph at lines 353--356
 []\TU/THSarabunNew(1)/m/n/12 Peripheral Initialization, Callback
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--358
+Underfull \hbox (badness 10000) in paragraph at lines 353--356
 \TU/THSarabunNew(1)/m/n/12 Registration, Main Loop (Modbus
  []
 
 [57]
-Overfull \hbox (358.71417pt too wide) in paragraph at lines 371--395
+Overfull \hbox (358.71417pt too wide) in paragraph at lines 369--393
  [][] 
  []
 
 [58] [59]) (sections/04_integration.tex
-Overfull \hbox (6.74048pt too wide) in paragraph at lines 483--2
+Overfull \hbox (6.74048pt too wide) in paragraph at lines 481--2
 \TU/THSarabunNew(2)/m/n/12 control_system_mode \TU/THSarabunNew(1)/m/n/12 ระหว่
 าง \TU/THSarabunNew(2)/m/n/12 CONTROL_MODE_JOYSTICK \TU/THSarabunNew(1)/m/n/12 
 และ \TU/THSarabunNew(2)/m/n/12 CONTROL_MODE_BASE_SYSTEM
