@@ -738,15 +738,15 @@ De-energize และตัดไฟมอเตอร์ทันที
         Motor Driver MD10C & 24V & 0.1 A & 2.4 W & Driver Loss เล็กน้อย (Static Loss) \\
         Contactor Coil & 24V & 0.1 A & 2.4 W & ใช้ไฟตอน Energize \\
         Relay Module (2 ช่อง) & 24V & 0.2 A & 4.8 W & ประมาณ 100 mA ต่อ Coil \\
-        Solenoid Valve (Gripper) & 24V & 0.5 A & 12 W & ประมาณตาม Solenoid ทั่วไป \\
-        Margin Safety 10\% & - & 0.59 A & 14.16 W & บวกเพิ่ม 10\% ของกระแสรวม (5.9 A) \\
+        Proximity sensor PR12-2DN  & 12V & 0.2 A & 2.4 W & ประมาณตาม Solenoid ทั่วไป \\
+        Margin Safety 10\% & - & 0.56 A & 13.20 W & บวกเพิ่ม 10\% ของกระแสรวม (5.6 A) \\
         \midrule
-        \textbf{รวม 24V Bus} & \textbf{24V} & $\approx\textbf{6.49 A}$ & $\approx\textbf{155.76 W}$ & \textbf{เพียงพอ (PSU 24V/10A = 240W)} \\
+        \textbf{รวม 24V Bus} & \textbf{24V} & $\approx\textbf{6.16 A}$ & $\approx\textbf{145.20 W}$ & \textbf{เพียงพอ (PSU 24V/10A = 240W)} \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-ค่ากระแสรวมบน 24V Bus อยู่ที่ประมาณ 5.28 A ซึ่งน้อยกว่าพิกัดของ PSU 24V/10A (240W) อยู่มาก มีกำลังเหลือ Margin ประมาณ 47\%
+ค่ากระแสรวมบน 24V Bus อยู่ที่ประมาณ 6.16 A ซึ่งน้อยกว่าพิกัดของ PSU 24V/10A (240W) อยู่มาก มีกำลังเหลือ Margin ประมาณ 39.5\%
 
 \subsubsection{โหลดบน 5V Bus (Logic Power)}
 \label{subsubsec:load_5v_bus}
@@ -762,19 +762,17 @@ De-energize และตัดไฟมอเตอร์ทันที
         STM32G474 Nucleo Board & 5V & 0.50 A & 2.50 W & จาก ST Datasheet \\
         ESP32 DevKit V1 & 5V & 0.50 A & 2.50 W & Peak ระหว่าง Bluetooth/Wi-Fi Tx \\
         AMT-103 Encoder & 5V & 0.10 A & 0.50 W & จาก CUI Datasheet \\
-        Proximity Sensor & 5V & 0.05 A & 0.25 W & Inductive Type ทั่วไป \\
-        Opto Module x2 & 5V & 0.04 A & 0.20 W & ประมาณ 20 mA ต่อชุด \\
-        Relay Module 1 & 5V & 0.10 A & 0.50 W & Coil 5V \\
-        LED Indicator x3 & 5V & 0.06 A & 0.30 W & 20 mA ต่อดวง \\
+        Opto Module x4 & 5V & 0.08 A & 0.40 W & ประมาณ 20 mA ต่อชุด \\
+        Relay Module X5 & 5V & 0.50 A & 2.50 W & Coil 5V \\
         Selector Switch & 5V & 0.01 A & 0.05 W & ไม่มีนัยสำคัญ \\
-        Margin Safety 20\% & 5V & 0.27 A & 1.36 W & บวกเพิ่ม 20\% ของกระแสรวม (1.36 A) \\
+        Margin Safety 10\% & 5V & 0.169 A & 0.845 W & บวกเพิ่ม 10\% ของกระแสรวม (1.69 A) \\
         \midrule
-        \textbf{รวม 5V Bus} & \textbf{5V} & $\approx\textbf{1.63 A}$ & $\approx\textbf{8.16 W}$ & \textbf{เพียงพอ (PSU 5V/5A = 25W)} \\
+        \textbf{รวม 5V Bus} & \textbf{5V} & $\approx\textbf{1.86 A}$ & $\approx\textbf{9.30 W}$ & \textbf{เพียงพอ (PSU 5V/5A = 25W)} \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-ค่ากระแสรวมบน 5V Bus อยู่ที่ประมาณ 1.63 A ซึ่งน้อยกว่าพิกัดของ PSU 5V/5A (25W) มีกำลังเหลือ Margin ประมาณ 67\%
+ค่ากระแสรวมบน 5V Bus อยู่ที่ประมาณ 1.86 A ซึ่งน้อยกว่าพิกัดของ PSU 5V/5A (25W) มีกำลังเหลือ Margin ประมาณ 62.8\%
 
 
 
@@ -789,8 +787,8 @@ De-energize และตัดไฟมอเตอร์ทันที
         \toprule
         \textbf{PSU} & \textbf{พิกัด (Rated)} & \textbf{โหลดจริง (Actual Load)} & \textbf{Margin คงเหลือ} & \textbf{ผลการตรวจสอบ} \\
         \midrule
-        PSU 24V/10A & 240 W & 126.7 W & 47\% & PASS \checkmark \\
-        PSU 5V/5A & 25 W & 8.17 W & 67\% & PASS \checkmark \\
+        PSU 24V/10A & 240 W & 145.20 W & 39.5\% & PASS \checkmark \\
+        PSU 5V/5A & 25 W & 9.30 W & 62.8\% & PASS \checkmark \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -815,8 +813,8 @@ PSU ทั้งสองชุดมีกำลังเพียงพอส�
     \toprule
     วงจร & กระแสโหลด (A) & ขนาดขั้นต่ำ ($\geq$1.25$\times$load) & ขนาดที่เลือก \\
     \midrule
-    AC Input -- 24V Branch & 0.67 & 0.84\,A & 1\,A \\
-    DC 24V -- Motor Branch & 5.28 & 6.60\,A & 10\,A \\
+    AC Input -- 24V Branch & 8.02 & 10.02\,A & 10.5\,A \\
+    DC 24V -- Motor Branch & 6.16 & 7.70\,A & 8\,A \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -833,10 +831,9 @@ PSU ทั้งสองชุดมีกำลังเพียงพอส�
         \textbf{วงจร} & \textbf{กระแสโหลด ($I_{load}$)} & \textbf{ขนาดฟิวส์ขั้นต่ำ} & \textbf{ขนาดที่เลือกใช้} \\
          & & \textbf{($\ge 1.25 \times I_{load}$)} & \textbf{(Standard Size)} \\
         \midrule
-        AC Input 24V Branch & ประมาณ 0.58 A (คำนวณจาก Power 126.7W) & 0.72 A & 1 A \\
-        5V AC Input Branch & $\approx 0.037$ A (คำนวณจาก Power 8.16W) & 0.046 A & 0.5 A \\
-        DC 24V Motor Branch & 5.28 A & 6.60 A & 8 A \\
-        DC 5V-Logic Branch & 1.63 A & 2.04 A & 2.5 A \\
+        AC Input 24V Branch & ประมาณ 8.02 A (คำนวณจาก Power 145.20W) & 10.02 A & 10.5 A \\
+        DC 24V Motor Branch & 5 A & 6.25 A & 6.5 A \\
+        DC 5V-Logic Branch & 1.86 A & 2.32 A & 2.5 A \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -864,27 +861,30 @@ Magnetic Contactor, PSU 24\,V/10\,A และ PSU 5\,V/5\,A
 \label{subsubsec:pcb_design}
 PCB ออกแบบ ด้วย KiCad 9.0.0 เพื่อ รวม STM32G474RE Nucleo Board, ESP32-DEVKITC-32UE 
 และ Motor Driver Connector ไว้บน Board เดียวกัน และมี Terminal รองรับการต่อสายไฟจาก 
-Optocoupler Module, Relay Module, Encoder Connector  
+Optocoupler Module, Relay Module, Encoder Connector,Gripper interface, ไฟเลี้ยงบอร์ด 5V และ CAN Bus
 เพื่อลดจำนวนสายเชื่อมต่อภายในตู้ควบคุมและเพิ่มความเป็นระเบียบ
 
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/pcb_layout.png}
+    % เอา width=\textwidth ออก กำหนดเฉพาะความสูงอย่างเดียว
+    \includegraphics[height=4.5cm]{images/pcb_layout.png}
     \caption{PCB Layout (KiCad PCB Editor)}
     \label{fig:pcb_layout}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/pcb_3d.png}
+    % กำหนดความสูงให้เท่ากันเป๊ะกับรูปแรก
+    \includegraphics[height=4.5cm]{images/pcb_3d.png}
     \caption{PCB 3D Render}
     \label{fig:pcb_3d}
   \end{subfigure}
   \caption{การออกแบบ PCB สำหรับระบบควบคุม}
   \label{fig:pcb_design}
 \end{figure}
+
 
 % ============================================================
 \subsubsection{การออกแบบวงจรป้องกัน (Protection Circuit)}
@@ -907,11 +907,10 @@ Fuse ต่ออนุกรมในวงจร Motor Driver
 เพื่อป้องกันความเสียหายเมื่อเกิด Short Circuit
 
 \textbf{Emergency Stop Hardware Interlock:}
-E-Stop ทำงานในระดับ Hardware โดยตรง
-ไม่ผ่าน Firmware ทำให้ไม่สามารถ Override ได้แม้ Software ค้าง
-NC Contact ของปุ่ม E-Stop ต่ออยู่ใน Series กับ Coil ของ Contactor
-เมื่อกด E-Stop หรือสายหลุด Contactor จะ De-energize ทันที
-(Fail-Safe Design)
+E-Stop ทำงานในระดับ Hardware โดยตรงผ่าน Contactor 
+เพื่อตัดไฟมอเตอร์ โดยมีการส่งสัญญาณไปให้ 
+STM32 รับรู้ เพื่อส่งสัญญาณไปควบคุม Relay เพื่อตัด Contactor 
+ทำให้ไม่สามารถ Override ได้ 
 
 % ============================================================
 \subsubsection{การออกแบบวงจร Optocoupler และ Relay}
@@ -926,18 +925,18 @@ High Voltage Side (24\,V) และ Logic Side (3.3\,V/5\,V ของ STM32)
   \centering
   \caption{Optocoupler Module Channel Mapping}
   \label{tab:opto_mapping}
-  \begin{tabular}{cclll}
+  \begin{tabular}{cclccl}
     \toprule
-    Channel & ทิศทาง & สัญญาณ & STM32 Pin & Mode \\
+    Channel & ทิศทาง & สัญญาณ & ทิศทาง & STM32 Pin & Mode \\
     \midrule
-    CH1 & Input  & Emergency Stop      & PA5  & EXTI Interrupt \\
-    CH2 & Input  & Proximity Sensor    & PA6  & GPIO Input \\
-    CH3 & Input  & Mode Selector SW    & PA7  & GPIO Input \\
-    CH4 & Input  & Reset Button        & PB6  & GPIO Input \\
-    CH5 & Output & Relay IN1 (Motor)   & PB12 & GPIO Output \\
-    CH6 & Output & Relay IN2 (Mode Lamp) & PB11 & GPIO Output \\
-    CH7 & Output & Relay IN3 (Status Lamp) & PB2 & GPIO Output \\
-    CH8 & Output & ยังไม่กำหนด        & PB1  & GPIO Output \\
+    CH1 & Input  & Emergency Stop   & output   & PA5  & EXTI Interrupt \\
+    CH2 & Input  & Proximity Sensor & output   & PA6  & GPIO Input \\
+    CH3 & Input  & Mode Selector SW & output   & PA7  & GPIO Input \\
+    CH4 & Input  & Reset Button     & output   & PB6  & GPIO Input \\
+    CH5 & Input & ยังไม่กำหนด       & output    & PB12 & ยังไม่กำหนด \\
+    CH6 & Input & ยังไม่กำหนด       & output    & PB11 & ยังไม่กำหนด \\
+    CH7 & Input & ยังไม่กำหนด       & output    & PB2 & ยังไม่กำหนด \\
+    CH8 & Input & ยังไม่กำหนด       & output    & PB1  & ยังไม่กำหนด \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -990,8 +989,8 @@ Relay Module รับคำสั่งจาก STM32 ผ่าน Optocoupler
     \multicolumn{4}{l}{\textit{Communication}} \\
     PC10& UART TX    & USART3 TX        & ESP32 RX (Joystick) \\
     PC11& UART RX    & USART3 RX        & ESP32 TX (Joystick) \\
-    PA11& CAN RD     & CAN1\_RD         & CAN Bus \\
-    PA12& CAN TD     & CAN1\_TD         & CAN Bus \\
+    PA11& CAN TD     & CAN1\_TD         & CAN Bus \\
+    PA12& CAN RD     & CAN1\_RD         & CAN Bus \\
     \midrule
     \multicolumn{4}{l}{\textit{Safety Input (via Optocoupler)}} \\
     PA5 & E-Stop     & EXTI Interrupt   & Opto CH1 \\
@@ -1010,7 +1009,10 @@ Relay Module รับคำสั่งจาก STM32 ผ่าน Optocoupler
     PB0 & Reed Up    & GPIO Output      & Reed SW Up \\
     PA4 & Reed Down  & GPIO Output      & Reed SW Down \\
     PA1 & Reed Close & GPIO Output      & Reed SW Close \\
-    PA0 & Reed Open  & GPIO Output      & Reed SW Open \\
+    PC3 & Reed Open  & GPIO Output      & Reed SW Open \\
+    \midrule
+    \multicolumn{4}{l}{\textit{Current Sensor}} \\
+    PA0 & Analog Input & GPIO Input      & Current Sensor \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1059,7 +1061,7 @@ STM32 ถอดรหัส Packet และตรวจสอบ Checksum
   \end{tabular}
 \end{table}
 
-การสลับโหมดระหว่าง Manual (Joystick) และ Auto (Base System)
+การสลับโหมดระหว่าง Joystick และ Base System
 ทำผ่าน Mode Selector Switch บนตู้ควบคุม
 ซึ่งส่งสัญญาณผ่าน Opto CH3 ไปยัง STM32 PA7
 เมื่ออยู่ในโหมด Auto Firmware จะ Block คำสั่งจาก Joystick ทั้งหมด
